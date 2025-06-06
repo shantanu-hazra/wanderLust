@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="container mb-5" style="margin-top:5rem;">
+    <form action="/register" method="post" novalidate class="needs-validation">
+      <div class="signUp" style="max-width: 35rem; margin: auto;">
+        <div class="block">
+          <label for="email" class="form-label">Email </label>
+          <input type="email" name="email" id="email" required class="form-control">
+        </div>
+        <div class="block">
+          <label for="username" class="form-label">Username </label>
+          <input type="text" name="username" id="username" required class="form-control">
+        </div>
+
+        <div class="block">
+          <label for="password" class="form-label">Password </label>
+          <input type="password" name="password" id="password" required class="form-control">
+        </div>
+
+        <br/>
+        
+        <button type="submit" class="btn btn-success">Sign Up</button>
+      </div>
+    </form>
+  </div>
+  
+</body>
+</html>

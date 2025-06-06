@@ -1,0 +1,111 @@
+body{
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+/* navbar  */
+nav {
+  background-color: #222222;
+  height:4rem;
+  width:100%;
+}
+.navbar .nav-link{
+  color:black !important;
+}
+nav .navbar-brand{
+  font-size:1.5rem;
+  color: rgb(251, 93, 93);
+}
+
+
+/*cards in home*/
+ .cards{
+margin:1rem 0.5rem 0rem 0.5rem;
+}
+
+.card-img-top{
+  width:100%;
+  object-fit: cover !important;
+}
+
+.card a{
+  text-decoration: none !important;
+  color:black
+}
+.card{
+  border:none !important;
+
+}
+
+/* footer */
+.footer .f-info-name p{
+  vertical-align: center;
+}
+
+.footer .f-info-links a{
+  color:black;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.footer .f-info-links a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer .f-info-social,
+.footer .f-info-links,
+.footer .f-info-name{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .f-info-social i{
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+.footer{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height:8rem;
+}
+
+/* posters in the displays */
+.poster{
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;  
+  display:flex;
+  justify-content: center;
+}
+
+.poster b{
+  font-size: larger;
+}
+.postered-form{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.postered-form form{
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+/* review system */
+.reviews .review{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.review .dele-btn{
+  margin:1.5rem;
+}
+
+.review .review-system{
+  margin-left:1rem;
+  margin-right:1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}

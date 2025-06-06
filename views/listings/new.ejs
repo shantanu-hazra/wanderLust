@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="container mb-5">
+    <div class="card">
+      <div class="card-body">
+        <form action="/listings/new" method="post" novalidate class="needs-validation">
+          <div class="mb-3">
+            <label for="title" class="form-label">Enter the title:</label>
+            <input type="text" placeholder="Title" name="listings[title]" id="title" class="form-control" required>
+            <div class="invalid-feedback">
+              Title should be a valid 
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Enter the description:</label>
+            <textarea name="listings[description]" id="description" placeholder="Please enter the description" class="form-control" required></textarea> 
+            <div class="invalid-feedback">
+              Description should be a valid 
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">Please enter the URL for the image:</label>
+            <input name="listings[image]" type="text" id="image" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Please enter the accommodation cost per night:</label>
+            <input type="text" id="price" placeholder="Accommodation cost per night" name="listings[price]" class="form-control" required>
+            <div class="invalid-feedback">
+              Price should be a valid 
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">Please enter the location of your accommodation:</label>
+            <input type="text" id="location" placeholder="Location of your accommodation" name="listings[location]" class="form-control" required>
+            <div class="invalid-feedback">
+              Location name should be a valid 
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="country" class="form-label">Please enter the country of your accommodation:</label>
+            <input type="text" id="country" name="listings[country]" placeholder="Country" class="form-control" required>
+            <div class="invalid-feedback">
+              Country name should be a valid 
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,101 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <h1>Former Details</h1>
+  <div class="poster">
+    <div class="card" style="width: 25rem;">
+        <img src="<%= listings.image.url%>" class="card-img-top" alt="Hotel Image" style="height:25rem">
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= listings.title %></b><br/>
+            <%= listings.description %><br/>
+            <%= listings.location %>, <%= listings.country %>.<br/><br/>
+            <b>Price: &#8377; <%= listings.price.toLocaleString("en-IN") %>/Night</b>
+          </p>
+        </div>
+      </div>
+  </div>
+  <form action="/listings/<%=listings._id%>?_method=PUT" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+    <h3>Please enter the values you wish to change</h3>
+    <div class="container mb-5">
+      <div class="card">
+        <div class="mb-3">
+          <label for="id" class="form-label">Enter the title:</label>
+          <input 
+            type="text" 
+            name="listing[title]" 
+            id="title" 
+            value="<%= listings.title %>"
+            required 
+            class="form-control">
+            <div class="invalid-feedback">
+              Title should be valid
+            </div>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Enter the description:</label>
+          <input
+          type="text" 
+          name="listing[description]" 
+          id="description" 
+          value="<%= listings.description %>"
+          class="form-control" 
+          required>
+          <div class="invalid-feedback">
+            Description should be valid
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Please enter the url for the image:</label>
+          <input
+          type="file" 
+          name="listing[image]" 
+          id="image" 
+          value="<%= listings.image %>"
+          class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label for="Price" class="form-label">Please enter the accomodation cost per night wise:</label>
+          <input 
+          type="text" 
+          id="Price" 
+          name="listing[price]" 
+          value="<%= listings.price %>"
+          class="form-control" 
+          required>
+          <div class="invalid-feedback">
+            Price should be valid
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="loc" class="form-label">Please enter the location of your accomodation:</label>
+          <input 
+          type="text" 
+          id="loc" 
+          name="listing[location]" 
+          value="<%= listings.location %>"
+          class="form-control" 
+          required>
+          <div class="invalid-feedback">
+            Location should be valid
+          </div>
+        </div>
+      
+        <div class="mb-3">
+          <label for="country" class="form-label">Please enter the country of your accomodation:</label>
+          <input 
+          type="text" 
+          id="country" 
+          name="listing[country]" 
+          value="<%= listings.country %>"
+          class="form-control" 
+          required>
+          <div class="invalid-feedback">
+            Country should be valid
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit">save</button>
+  </form> 
+</body>
