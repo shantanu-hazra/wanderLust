@@ -49,11 +49,11 @@ mongoose.connection.on("connected", async () => {
   console.log("connected to the DB server");
   // data insertion
 
-  // await Listings.insertMany(data.data)
-  //   .then(consol.log("data submitted"))
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+  await Listings.insertMany(data.data)
+    .then(console.log("data submitted"))
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 const sessionOptions = {

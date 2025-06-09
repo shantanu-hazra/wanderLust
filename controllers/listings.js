@@ -49,6 +49,8 @@ module.exports.displayListings = async (req, res) => {
   if (res.locals.currUser) {
     currUser = res.locals.currUser;
   }
+
+  console.log(currUser);
   res.render("listings/display.ejs", {
     listings,
     theReviews: listings.reviews,
