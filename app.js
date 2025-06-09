@@ -23,6 +23,8 @@ const reviewRoutes = require("./routes/reviews.js");
 const listingRoutes = require("./routes/listings.js");
 const userRoutes = require("./routes/users.js");
 
+const data = require("./init/data.js");
+
 //middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -34,22 +36,24 @@ app.set(path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
 
 //establishing the connection with db
-let MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+let MONGO_URL = process.env.MONGO_URL;
 
-main()
-  .then(console.log("connected to the database"))
-  .catch((err) => console.log(err));
+mongoose
+  .connect(MONGO_URL, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
+  .catch((e) => console.log("Couldn't connect to the DB server"));
 
-async function main() {
-  await mongoose.connect(MONGO_URL);
-}
+mongoose.connection.on("connected", async () => {
+  console.log("connected to the DB server");
+  // data insertion
 
-//data insertion
-//Listings.insertMany(data).then("data submitted").catch((err)=>{console.log(err)});
-
-//root route
-app.get("/", (req, res) => {
-  res.send("this is the root route");
+  // await Listings.insertMany(data.data)
+  //   .then(consol.log("data submitted"))
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 });
 
 const sessionOptions = {
@@ -81,7 +85,7 @@ app.use((req, res, next) => {
 });
 
 // Listings paths
-app.use("/", listingRoutes);
+app.use("/listings", listingRoutes);
 //Reviews paths
 app.use("/:id/review", reviewRoutes);
 // user paths
